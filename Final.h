@@ -7,12 +7,13 @@
 
 #include <vector>
 using namespace std;
+class Customer;
 
 class ATM {
 private:
 	//need to initialize allCustomers
 	vector<Customer> allCustomers;
-	Person currentCustomer;
+	Customer currentCustomer();
 	int findCustomer(int cardNumber){
 		//iterates through allCustomers comparing cardNumbers until it finds a match
 		for (int i = 0; i < allCustomers.size(); i++) {
