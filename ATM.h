@@ -15,7 +15,7 @@ class ATM {
 private:
     //need to initialize allCustomers
     vector<Customer> allCustomers;
-    Customer currentCustomer();
+    Customer currentCustomer = Customer("","","",0,0,0);
     int findCustomer(int cardNumber){
         //iterates through allCustomers comparing cardNumbers until it finds a match
         for (int i = 0; i < allCustomers.size(); i++) {
@@ -30,6 +30,10 @@ private:
     
 public:
     bool addNewCustomer();
+    
+    Customer getCurrentCustomer() {
+        return this->currentCustomer;
+    }
     
     //finish method below
     bool setCurrentCustomer(int cardNumber){
@@ -54,7 +58,7 @@ public:
     }
     
     Customer getCustomer(int cardNumber){
-        x = findCustomer(cardNumber);
+        int x = findCustomer(cardNumber);
         
         //if x is within the size of allCustomers returns the customer at that location
         if (x > -1) {
@@ -62,7 +66,7 @@ public:
         }
         
         //otherwise returns nullptr reference (NULL)
-        return nullptr;
+        return Customer("","","",0,0,0);
     }
     
 };
